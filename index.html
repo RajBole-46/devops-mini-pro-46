@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malvan - Travel Photography</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         .photo-gallery {
+        text-align: center;
+        padding: 20px;
+    }
+    .gallery-filter {
+        margin-bottom: 20px;
+    }
+    .filter-btn {
+        padding: 10px 15px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        background: #007BFF;
+        color: white;
+        border-radius: 5px;
+    }
+    .filter-btn.active {
+        background: #0056b3;
+    }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Malvan</h1>
+                <span>Coastal Paradise</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#attractions">Attractions</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero" style="background-image: url('img/fort.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1>Welcome to Malvan</h1>
+                <p>Discover the hidden gem of Maharashtra's Konkan Coast</p>
+                <a href="#gallery" class="cta-button">Explore Now</a>
+            </div>
+        </section>
+
+        <section id="attractions" class="featured-destinations">
+            <h2>Must-Visit Places</h2>
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <img src="img/fort.jpg" alt="Sindhudurg Fort">
+                    <div class="card-content">
+                        <h3>Sindhudurg Fort</h3>
+                        <p>17th-century maritime fortress</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="img/Devbag.jpg" alt="Malvan Beaches">
+                    <div class="card-content">
+                        <h3>Pristine Beaches</h3>
+                        <p>Tarkarli, Devbag, and Chivla beaches</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="img/kunkeshwar.jpg" alt="kunkeshwar temple">
+                    <div class="card-content">
+                        <h3>Kunkeshwar temple</h3>
+                        <p>A Hindu temple dedicated to lord shiva</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="photo-gallery">
+            <h2>Malvan Gallery</h2>
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="beaches">Beaches</button>
+                <button class="filter-btn" data-filter="activities">Activities</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="beaches">
+                    <img src="img/Tarkarli.jpg" alt="Beautiful Beach">
+                </div>
+                <div class="gallery-item" data-category="beaches">
+                    <img src="img/3.jpg" alt="Sunset at the Beach">
+                </div>
+                <div class="gallery-item" data-category="activities">
+                    <img src="img/4.jpg" alt="Exploring fort">
+                </div>
+                <div class="gallery-item" data-category="activities">
+                    <img src="img/boat.jpg" alt="Boating Adventure">
+                </div>
+            </div>
+        </section>
+
+        <section id="stories" class="travel-stories">
+            <h2>Local Experiences</h2>
+            <div class="stories-container">
+                <article class="story-card">
+                    <img src="img/kunkeshwar.jpg" alt="Malvani Cuisine">
+                    <div class="story-content">
+                        <h3>Authentic Malvani Cuisine</h3>
+                        <p>Savor the spicy and aromatic local delicacies</p>
+                        <!-- <a href="#" class="read-more">Read More</a> -->
+                    </div>
+                </article>
+                <article class="story-card">
+                    <img src="img/Tarkarli.jpg" alt="Beach ">
+                    <div class="story-content">
+                        <h3>Tarkarli Beach</h3>
+                        <p>Experience magical day by the Arabian Sea</p>
+                        <!-- <a href="#" class="read-more">Read More</a> -->
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Malvan</h3>
+                <p>Discover the perfect blend of history, beaches, and authentic Malvani culture in this coastal paradise.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Explore Malvan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const galleryItems = document.querySelectorAll(".gallery-item");
+    
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    const filter = this.getAttribute("data-filter");
+                    
+                    filterButtons.forEach(btn => btn.classList.remove("active"));
+                    this.classList.add("active");
+                    
+                    galleryItems.forEach(item => {
+                        if (filter === "all" || item.getAttribute("data-category") === filter) {
+                            item.style.display = "block";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
