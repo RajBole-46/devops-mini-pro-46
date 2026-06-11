@@ -9,9 +9,11 @@ pipeline {
             }
         }
 
-        stage('Deploy Using Ansible') {
+        stage('Deploy Container') {
             steps {
-                bat 'wsl ansible-playbook /home/rajbole/devops/deploy.yml'
+                bat 'docker stop portfolio-container || exit 0'
+                bat 'docker rm portfolio-container || exit 0'
+                bat 'docker run -d --name portfolio-container -p 8080:80 portfolio-app'
             }
         }
 
@@ -19,15 +21,6 @@ pipeline {
             steps {
                 bat 'docker ps'
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Deployment Successful!'
-        }
-        failure {
-            echo 'Deployment Failed!'
         }
     }
 }
